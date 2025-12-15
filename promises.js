@@ -165,13 +165,64 @@
 // dowanloadFile("htp").then((result)=>{console.log(result)})
 // .catch((error)=>{console.log(error)})
 
-// q4.1
-// function getUserName(name){
-//     return new Promise((res, rej)=>{
-//         setTimeout(() => {
-            
-//         }, );
+// q5.1
+// function getUser() {
+//     return new Promise((res) => {
+//         res({ id: 1, name: "dana" })
 //     })
 // }
 
+// function getScore(userId) {
+//     return new Promise((res) => {
+//         if(userId == 1){
+//         res(90)}
+//     })
+// }
 
+// q5.2
+// function loadConfig(){
+//     return new Promise((res)=>{
+//         res({theme:"dark"})
+//     })
+// }
+// function applyConfig(config){
+//     return new Promise((res)=>{
+//         res("theme set to dark")
+//     })
+// }
+
+// loadConfig().then(result=>applyConfig(result.theme).then(result =>{console.log(result)}))
+
+// q5.3
+// function doubleAsync(n){
+//     return new Promise((res)=>{
+//         res(n*2)
+//     })
+// }
+
+// function tripleAsync(n){
+//     return new Promise((res)=>{
+//         res(n*3)
+//     })
+// }
+
+// doubleAsync(2).then(result=>tripleAsync(result).then(result=>{console .log(result)}))
+
+// q5.4
+// function checkNumber(n){
+//     return new Promise((res, rej)=>{
+//         if(n>0){
+//             res(n)
+//         }
+//         else{
+//             rej("error")
+//         }
+//     })
+// }
+// function square(n){
+//     return new Promise((res)=>{
+//         res(n*n)
+//     })
+// }
+
+// checkNumber(4).then(result=>square(result).then(result=>{console.log(result)})).catch(error =>{console.log(error)});
