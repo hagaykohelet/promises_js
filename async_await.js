@@ -152,7 +152,10 @@
 
 // loadConfig().then(result=>{console.log(result)}).catch(error=>{console.log(error)})
 
-// q10.1
+
+
+// async/await
+// q1
 
 // async function waitForHello(){
 //     const p1 = new Promise((res)=>{
@@ -167,7 +170,7 @@
 // waitForHello()
 
 
-// q10.2
+// q2
 // function doubleAsync(n){
 //     return new Promise((res)=>{
 //         setTimeout(() => {
@@ -184,7 +187,7 @@
 // run()
 
 
-// q10.3
+// q3
 // function fetchUser(){
 //     return new Promise((res)=>{
 //         setTimeout(() => {
@@ -201,7 +204,7 @@
 // run()
 
 
-// q10.4
+// q4
 // function validateAge(age){
 //     return new Promise((res, rej) => {
 //          if(age >= 18){
@@ -210,7 +213,7 @@
 //          else{
 //             rej("too young")
 //          }
-        
+
 //     })
 // }
 
@@ -229,7 +232,7 @@
 
 
 
-// q10.5
+// q5
 
 // function getNumber(){
 //     return new Promise((res)=>{
@@ -255,7 +258,7 @@
 // run()
 
 
-// q10.6
+// q6
 // function delay(ms){
 //     return new Promise((res)=>{
 //         setTimeout(() => {
@@ -274,7 +277,7 @@
 // run()
 
 
-// q10.7
+// q7
 // function maybeFail(){
 //     let number = Math.random()*1
 //     return new Promise((res, rej)=>{
@@ -287,13 +290,96 @@
 //     })
 // }
 
+// async function run(){
+//     try{
+//         let number = await maybeFail()
+//         console.log(number)
+//     }
+//     catch(err){
+//         console.log(err)
+//     }
+// }
+// run()
+
+
+// q8
+
+// function p1(){
+//     return new Promise((res)=>{
+//         setTimeout(() => {
+//             res("a")
+//         }, 300);
+//     })
+// }
+
+// function p2(){
+//     return new Promise((res)=>{
+//         setTimeout(() => {
+//             res("b")
+//         }, 500);
+//     })
+// }
+
+// function p3(){
+//     return new Promise((res)=>{
+//         setTimeout(() => {
+//             res("c")
+//         }, 200);
+//     })
+// }
+
+// async function playAll(){
+//     let val = await Promise.all([p1(),p2(),p3()])
+//     console.log(val)
+// }
+
+// playAll()
 
 
 
+// q9
+
+// async function getGreeting(){
+//     return new Promise((res)=>{
+//         setTimeout(() => {
+//             res("greeting: hello")
+//         }, 700);
+//     })
+// }
+
+// getGreeting().then(result=>{console.log(result)})
 
 
+// q10
+// function getUser() {
+//     return new Promise((res) => {
+//         res({ id: 1, name: "dana", age: 16 })
+//     })
+// }
 
+// function ensureAdult(user) {
+//     return new Promise((res, rej) => {
+//         if (user > 18) {
+//             res("old enugh")
+//         }
+//         else {
+//             rej("not in adult")
+//         }
+//     })
+// }
 
+// async function play(){
+    
+//     try{
+//     let age = await getUser()
+//     let check = await ensureAdult(age.age)
+//     console.log(check)}
+//     catch(err){
+//         console.log(err)
+//     }
+// }
+
+// play()
 
 
 
